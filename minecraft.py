@@ -87,7 +87,7 @@ class cmd:
 
         return newchat
 
-    def build_image(self,imgpath, blockposition, ABlocks,TexturePath , scale = 1, direction="x"):
+    def build_image(self,imgpath, blockposition, ABlocks,TexturePath , scale = 1, direction="x", Fast=False):
         #AllowedBlocks = open("blocklist.txt").read().split("\n")
         TexturePath = TexturePath + "\\assets\\minecraft\\textures\\block\\"
 
@@ -222,5 +222,10 @@ class cmd:
 
                 if p[1] > 255:
                     raise NameError("Cant place Blocks: Max height reached")
+            if not Fast:
+                self.run(rowcommand)
+            else:
+                newcommands += rowcommand + "\n"
 
-            self.run(rowcommand)
+        if Fast:
+            self.run(newcommands)
