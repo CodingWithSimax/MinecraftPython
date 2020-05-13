@@ -47,12 +47,13 @@ BlockTypes: Which blocks can be used (e. g. `BlockTypes = [cmd.types.wool, cmd.t
 TexturePath: Set Path to unzipped texturepack. Without a Texturepack the programm wouldnt know which Block has which color.
 ImageScale: The Scale of the image.
 Axis: In which direction to place the image.
+Fast: Say if you want to run it in one tick (only for smaller images) or if the image can load row after row. Default: False (row after row)
 ```
 
 After you made this variables, you can type:
 
 ```
-cmd.build_image(ImagePath, PositionToPlace, BlockTypes, TexturePath, ImageScale, Axis)
+cmd.build_image(ImagePath, PositionToPlace, BlockTypes, TexturePath, ImageScale, Axis, Fast)
 ```
 
 ## Examples
